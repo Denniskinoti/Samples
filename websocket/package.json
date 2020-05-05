@@ -1,0 +1,18 @@
+{
+  "name": "websoocket",
+  "version": "1.0.0",
+  "description": "this is just a simple websocket app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dennismoha",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13",
+    "socket.io": "^2.3.0"
+  }
+}

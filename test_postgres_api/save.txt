@@ -1,0 +1,86 @@
+const db = require('../db/config');
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt');
+
+
+const signup = (req,res,next) => {
+     const {name,email,password} = req.body;
+  const saltRounds = 12
+
+  if(!email || !password) {
+    res.status(422).send({message:'you must provide an email and a password'})
+  }
+  //see if a user with a given email exists
+
+  bcrypt.hash(password,saltRounds)
+    .then((hash) => {
+      password: hash
+      return db.query('insert into users (name, email, password) values($1,$2,$3)',[name,email,hash])
+        .then((newUser)=> {
+          //res.json({token: tokenForUser(newUser)})
+        })
+        .catch((err)=> {
+            throw err
+          //res.json({error: 'error saving user to database'})
+        })
+    })
+    .catch((err)=> {
+      return next(err)
+    })
+  
+}
+
+const login = (req,res,next) => {
+  console.log('this is the login form');
+}
+
+/*
+const signup = (req,res,next)=> {
+	jwt.verify(req.token, 'secretkey', (err, authData) => {
+    if(err) {
+      res.sendStatus(403);
+    } else {
+      res.json({
+        message: 'Post created...',
+        authData
+      });
+    }
+  });
+	
+}
+
+const login = (req,res,next)=> {
+	const user = {
+    id: "", 
+    username: '',
+    email: ''
+  }
+
+  jwt.sign({user}, 'secretkey', { expiresIn: '30s' }, (err, token) => {
+    res.json({
+      token
+    });
+  });
+}
+
+function verifyToken(req, res, next) {
+  // Get auth header value
+  const bearerHeader = req.headers['authorization'];
+  // Check if bearer is undefined
+  if(typeof bearerHeader !== 'undefined') {
+    // Split at the space
+    const bearer = bearerHeader.split(' ');
+    // Get token from array
+    const bearerToken = bearer[1];
+    // Set the token
+    req.token = bearerToken;
+    // Next middleware
+    next();
+  } else {
+    // Forbidden
+    res.sendStatus(403);
+  }
+
+}*/
+
+module.exports = {signup,login};

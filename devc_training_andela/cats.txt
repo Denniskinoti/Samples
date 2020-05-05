@@ -1,0 +1,8 @@
+API documentation using postman link --> https://youtu.be/Ayo_KdLLcTA
+configuring eslint -- download it as a --save-dev module.
+							it's self initializing so run, './node_modules/.bin/eslint --init
+ 
+ To install the eslint airbnb we have to 
+						 npm install --save-dev eslint prettier eslint-prettier eslint-config-prettier eslint-plugin-node eslint-config-node
+
+We can also install eslint globally and start it, -> sudo npm install -g eslint //then to start it we, eslint --init

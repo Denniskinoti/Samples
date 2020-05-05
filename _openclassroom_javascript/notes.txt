@@ -1,0 +1,14 @@
+		classes
+--> all classnames should start with a capital and best way should be in camelcas
+	-->class example <---
+		class NewBook {
+  constructor(title,author,number) {
+    this.title = title;
+    this.author = author;
+    this.number = number
+  }
+}
+
+let book = new NewBook('michael','greenwill',10);
+console.log(book);
+
