@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+			    	$(document).ready(function() {
+			    		// $('button').click(function() {
+			    		// 	$.get('/dataq',(data,status)=> {
+			    		// 		for (var i = 0; i < data.length;i++) {
+			    		// 			console.log(data[i].user + data[i].id)
+			    		// 			document.getElementById('data').textContent = data[i].user + " " +data[i].id
+			    		// 			  $("ul").append('<li>',data[i].user + " " +data[i].id,'</li>');			
+			    		// 		}
+			    		// 	});			    			
+			    		// });
+
+			    		// $('.formm').click(function(){
+			    		// 		$('#hi').hide();
+			    		// 	});
+			    		// $('.sformm').click(function(){
+			    		// 		$('#hi').show();
+			    		// 	});
+
+			    		// $('#sub').click(function() {
+			    		// 	var name = document.forms['myForms']['user'].value;
+			    		// 	var id = document.forms['myForms']['id'].value;
+
+			    		// 	$.post('/dataa',{
+			    		// 		user: name,
+			    		// 		id :id
+			    		// 	},function(data,status) {
+			    		// 		alert(data + " " + status)
+			    		// 	})
+			    		// });
+
+			    		$('#bt1').click(function() {
+			    			$.ajax({
+			    				method: 'GET',
+			    				url: '/dataq',
+			    				dataType: 'html'
+			    				
+			    			}).done(function(data){
+			    				document.getElementById('trial').innerHTML = data
+			    			})
+			    		});
+
+			    		$('#bt2').click(function() {
+			    			$.ajax({
+			    				method: 'GET',
+			    				url: '/data',
+			    				dataType: 'html'
+			    				
+			    			}).done(function(data){
+			    				document.getElementById('trial').innerHTML = data
+			    			})
+			    		});
+
+			    		$('#bt3').click(function() {
+			    			$.ajax({
+			    				method: 'GET',
+			    				url: '/try',
+			    				dataType: 'html'
+			    				
+			    			}).done(function(data){
+			    				document.getElementById('trial').innerHTML = data
+			    			})
+			    		});
+
+			    		$('#postForm').submit(function(e) {
+			    			e.preventDefault();
+			    			var title = $('#user').val();
+			    			var id = $('#id').val();
+			    			var url = $(this).attr('action');
+
+			    			$.post(url,{user:title,id:id}).done((data)=> {
+			    				document.getElementById('trial').innerHTML = data
+			    			})
+			    		});
+
+			    		(function(){
+			    			$.ajax({
+			    				method : 'GET',
+			    				url : '/dataq',
+			    				dataType: 'html'
+			    			}).done(function(data){
+			    				console.log('self invoking function ', data)
+			    				document.getElementById('el').innerHTML = data
+			    			})
+			    		})()
+			    		
+			    	})
+	</script>
+    </script>
+  </head>
+  <body>    
+
+<button id = "bt1">Click me</button>
+<button id = "bt2">Display form</button>
+<button id = "bt3">Display trial ejs</button>
+
+<p> <a href="/data"> fill data</a> </p>
+<p> <a href="/dataq"> get data</a> </p>
+<p id="data"> let's see it here</p>
+
+<h1 class="formm">hide form</h1>
+<h1 class="sformm">show form</h1>
+
+
+	<form name="myForms" action="/dataa" method="post" id ="postForm">
+		user: <input type="text" name="user" id='user'> <br><br>
+		id :  <input type="text" name="id" id='id'>
+		<input type="submit" id="sub">
+	</form>
+
+	<p id="trial"> load trial page </p>
+
+	<p id= "trial_text">changed content </p> 
+
+
+	<div  style="height: 150px; width: 200px; border:3px solid blue;overflow-y: scroll;">
+		<!-- <p style="height: 150px; width: 200px; border:3px solid blue;" id='el'> 
+
+	</p> -->
+	<p id = 'el'> </p>
+
+	</div>
+	
+
+
+<ul>
+	
+</ul>
+
+  </body>
+</html>

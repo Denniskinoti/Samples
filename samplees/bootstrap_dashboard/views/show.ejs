@@ -1,0 +1,24 @@
+  <% photo.forEach(function(photo){%>
+          <div class="col-lg-4 col-sm-6">
+              <div class="thumbnail">    
+                 <a href="#">  <img  src = "<%=photo.photo %>" alt ="address wrong" style="height:100px; width: 100px"> </a> 
+               <div class = "caption" >
+              	 <h4> <%= photo.title%> </h4>
+                
+               </div>                              
+              	<a  class="btn btn-primary" href="#">show info</a>
+              	<p>
+              		want to test relationships in mongoose
+              		both object id and many to many..
+
+              		create category
+              		creating comments
+              		test maps
+              		express validator
+              		uploading more files via multer
+              			--> creating a small blog
+              			-
+              	</p>
+              </div>
+         </div>              
+     <% }) %>

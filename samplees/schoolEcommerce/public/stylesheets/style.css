@@ -1,0 +1,28 @@
+html {
+	width: auto;
+	margin: 15px;
+	margin-top: 0;
+	background: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg') no-repeat center center fixed;
+}
+
+/* top bar navigation  */
+.back {
+	padding: 1px;
+	border: 3px solid;
+	background: linear-gradient(to bottom left, #00ff00 0%, #ff9933 100%);;
+}
+
+/*jumbotron */
+.jumbo {
+	/*background: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg') no-repeat center center fixed;*/
+	overflow: hidden;
+	margin:3px; 
+}
+
+/*carousel image */
+.immg {
+		width:30px;
+	height: 400px;
+
+
+}

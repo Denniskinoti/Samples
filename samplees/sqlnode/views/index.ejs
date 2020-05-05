@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery.js"></script>
+
+    <style type="text/css">
+    	html,body {
+    		background-color: rgb(0,92,92,92);
+    		margin: 0px;
+
+    	}
+
+    	.foorm {
+    		position: relative;
+    		left: 300px;    		
+    		margin: 100px;
+    		border:3px solid blue;
+    		border-radius: 10px;
+    		width: 30%
+    	}
+
+    	.inpuuts {
+    		margin: 10px;
+    		padding:10px;
+    		text-align: center;
+    	}
+
+    	.formheader {
+    		background-color: blue; 
+    		width: 100%;
+    		text-align: center;
+    		font-family: verdana;
+    	}
+
+    	form {
+    		background-color: white;
+    		height: auto;
+    		margin-bottom: 0px;
+    		padding-bottom: 0px;
+    	}
+    </style>
+  </head>
+  <body>
+   
+   <div class="foorm">
+	   	<form action="#" id='bills' name='billls'>
+
+		  
+
+		   	<div class="inpuuts">
+		   	 <label  for='amount'>How much was your bill ?</label> </br>
+		   		$ <input type="number" name="amount" placeholder="bill amount" min="0"  >
+		   	</div>
+
+
+		   	<div class="inpuuts">
+		   	 <label  for='bill'>How many people are sharing the bill?</label> </br>
+		   		<input type="number" name="people" placeholder="people sharing bill" min="0" >: people
+		   	</div>
+
+		   	<div class="inpuuts">
+		   			 
+		   		<input type="submit" name="submit" value="submit">
+		   	</div>
+
+	   	 
+	   </form>
+   </div>
+   
+
+    <script type="text/javascript">
+   			var amount = document.forms['billls'].elements;    		
+    		// var bill = document.forms['billls']['people'].value;
+    		
+    		$(document).ready(function() {
+    			for(i = 0; i < amount.length; i++) {
+    				console.log('the length is',amount.length)
+    				console.log([i])
+    			}
+    			
+    		})
+
+
+    		
+    		// $(document).ready(function() {
+    		// 	$('#bills').submit(function(e){
+    		// 		if(amount == "" || bill == "") {
+    		// 			e.preventDefault();
+    		// 			alert('all fields must be filled')
+    		// 			return false
+    		// 		} else {
+
+    		// 		alert('form submitted')
+    		// 		}
+    				
+    		// 	})
+    		// })
+
+    </script>
+
+  </body>
+</html>

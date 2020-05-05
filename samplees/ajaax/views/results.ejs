@@ -1,0 +1,10 @@
+this is the user results page
+
+<%results.forEach(function(user){%>
+
+<ul>
+	<li><a href="/data/<%= user._id%>"> <%= user.user %>   | <li><%= user.id %></li></a></li>
+
+</ul>
+	
+<% }) %>

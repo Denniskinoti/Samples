@@ -1,0 +1,46 @@
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+
+	  <title>MAMA MATUNDA </title>
+	  <meta name="description" content="MAMA MATUNDA SHOP">
+	  <meta name="author" content="DIANA">
+
+	  <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+	  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">  
+
+	</head>
+<body>
+  
+<%# top container %>
+	<div class="container-fluid">
+		<div class="row back">
+		<div class="col-lg-4">
+			<a href="/"> MAM MATUNDA</a>
+		</div>
+		
+		<div class="col-lg-4">
+			<a href="/home"> test homepage</a>
+		</div>
+
+		<% if(!currentUser) {%>
+			<div class="col-lg-4">
+			<P style="position: relative;float: right"><span> <a href="/login" >LOGIN </a> </span> | <span><a href="/singup" >SINGUP </a></span>  </P>
+
+		</div>
+		<%}else {%>
+			<div class="col-lg-4">
+			<P style="position: relative;float: right"><span> <a href="/users/logout" >LOGOUT</a> </span> | <span><a href="#" >PROFILE </a></span>  </P>
+
+		</div>
+		<%}%>
+		
+	</div>		
+	</div>
+	
+
+
+	<%#top nav %>
+
+	
+		
